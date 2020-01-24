@@ -31,5 +31,4 @@ public class Player : MonoBehaviour
         float margin = GetComponent<SpriteRenderer>().bounds.size.x;
         transform.position = Utils.GetClampedPosition(newPos, margin);
     }
-
 }
