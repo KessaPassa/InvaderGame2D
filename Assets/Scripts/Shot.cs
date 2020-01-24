@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
-    private float moveVolume = 3f; //移動量
+    // 移動量
+    private float moveVolume = 3f;
+    // 破壊するy軸の領域を設定
+    private float destroyPos = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Destroy(this.gameObject, 2f);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(new Vector2(0f, moveVolume * Time.deltaTime));
+        // 領域外になったら削除(基本は動作しないが念のため)
+        if(transform.position.y >= destroyPos)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)

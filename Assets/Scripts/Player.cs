@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float moveSpeed = 0.1f; //移動量
+    private float moveSpeed = 1f; //移動量
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +19,11 @@ public class Player : MonoBehaviour
         //ライトキーで右に移動
         
         //レフトキーで左に移動
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             move -= moveSpeed;
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             move += moveSpeed;
         }
